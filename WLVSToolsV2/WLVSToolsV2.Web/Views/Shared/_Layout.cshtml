@@ -8,9 +8,18 @@
     @RenderSection("Styles", required: false)
 </head>
 <body>
-    <h1>@ViewBag.Title</h1>
-    <div>
-        @RenderBody()
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>@ViewBag.Title</h1>
+            </div>
+        </div>
+        <div class="row" style="min-height: 500px;">
+            <div action="col-xs-12">
+                @RenderBody()
+            </div>
+        </div>
+        @Html.Partial("_Footer")
     </div>
     @RenderSection("Scripts", required: false)
 </body>
