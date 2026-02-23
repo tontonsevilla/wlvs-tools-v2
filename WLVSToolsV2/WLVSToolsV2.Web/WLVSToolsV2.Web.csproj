@@ -9,9 +9,7 @@
   <ItemGroup>
     <Folder Include="Areas\AIAgent\Models\" />
     <Folder Include="Areas\AIAssistant\Models\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
@@ -27,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LigerShark.WebOptimizer.Core" Version="3.0.477" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="10.0.2" />
   </ItemGroup>
 

@@ -1,11 +1,24 @@
+using WLVSToolsV2.Web.WebInfrastructure.Filters;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddWebOptimizer(pipeline =>
+{
+    pipeline.AddCssBundle("/css/bundle.css", "lib/bootstrap/dist/css/bootstrap.css", "css/site.css");
+    pipeline.AddJavaScriptBundle("/js/bundle.js", "lib/bootstrap/dist/js/bootstrap.js", "js/site.js");
+});
+
+builder.Services.AddControllersWithViews(options => 
+{ 
+    options.Filters.Add<NullModelFilter>(); 
+});
 
 var app = builder.Build();
 
-app.UseRouting();
+app.UseWebOptimizer();
+app.UseStaticFiles();
 
+app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
     // Area route
@@ -18,6 +31,5 @@ app.UseEndpoints(endpoints =>
         name: "default", 
         pattern: "{controller=Home}/{action=Index}/{id?}");
 });
-
 
 app.Run();

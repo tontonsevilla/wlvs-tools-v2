@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WLVSToolsV2.Web.Models.Home;
 
 namespace WLVSToolsV2.Web.Controllers
 {
@@ -6,7 +7,7 @@ namespace WLVSToolsV2.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new HomeViewModel());
         }
     }
 }
