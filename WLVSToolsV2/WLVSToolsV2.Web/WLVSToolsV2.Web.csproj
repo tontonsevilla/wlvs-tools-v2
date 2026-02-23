@@ -8,7 +8,9 @@
 
   <ItemGroup>
     <Folder Include="Areas\AIAgent\Models\" />
+    <Folder Include="Areas\AIAgent\Views\Shared\" />
     <Folder Include="Areas\AIAssistant\Models\" />
+    <Folder Include="Areas\AIAssistant\Views\Shared\" />
     <Folder Include="Data\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
