@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using WLVSToolsV2.Web.Common.Models.Menus;
 
-namespace WLVSToolsV2.Web.Models.Home
+namespace WLVSToolsV2.Web.Areas.AIAgent.Models.Home
 {
     public class HomeViewModel
     {
@@ -9,8 +9,8 @@ namespace WLVSToolsV2.Web.Models.Home
         {
             MenuItems = new List<MenuItem>()
             {
-                new MenuItem("AI Assistant", "~/AIAssistant"),
-                new MenuItem("AI Agent", "~/AIAgent")
+                new MenuItem("Generate Personal Info", "~/AIAssistant/Generate/PersonalInfo"),
+                new MenuItem("Generate Personal Info and Register", "~/AIAssistant/Generate/PersonalInfoAndRegister")
             };
 
             MenuItems = MenuItems.OrderBy(item => item.Title).ToList();

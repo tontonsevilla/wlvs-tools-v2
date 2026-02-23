@@ -1,0 +1,10 @@
+﻿@model IList<WLVSToolsV2.Web.Common.Models.Menus.MenuItem>
+
+<div class="row">
+    @foreach (var menuItem in Model)
+    {
+        <div class="col-xs-12 col-md-6 col-lg-3 ">
+            <a href="@Url.Content(menuItem.Url)" class="tiles-menu btn btn-default" role="button">@menuItem.Title</a>
+        </div>
+    }
+</div>
