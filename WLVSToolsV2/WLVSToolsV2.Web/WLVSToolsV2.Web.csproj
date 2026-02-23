@@ -7,9 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\AIAgent\Models\" />
+    <Folder Include="Areas\AIAssistant\Models\" />
     <Folder Include="Controllers\" />
     <Folder Include="Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
