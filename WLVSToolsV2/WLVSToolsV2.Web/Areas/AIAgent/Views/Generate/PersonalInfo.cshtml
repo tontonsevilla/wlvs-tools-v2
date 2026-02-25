@@ -1,0 +1,55 @@
+﻿@model WLVSToolsV2.Web.Areas.AIAgent.Models.Generates.PersonalInfoViewModel
+
+@{
+    ViewBag.Title = "Generate - Personal Info Test";
+}
+
+<form action="~/AIAgent/Generate/PersonalInfo" method="post">
+    @Html.Hidden("IsSubmitted", true)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Country)
+        @Html.TextBoxFor(m => m.Country, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Country)
+    </div>
+    <button type="submit" class="btn btn-success pull-right"><i class="fa fa-random mr-sm"></i>Generate</button>
+</form>
+@if (Model.IsSubmitted)
+{
+    if (Model.ChatResponse.HasResult)
+    {
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Tool: @Model.ChatResponse.ToolName</h2>
+                <pre id="output" class="json"></pre>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>No result.</p>
+    }
+}
+
+@section Styles{
+    <style>
+        .json {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 12px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+    </style>
+}
+
+@section Scripts{
+    <script>
+        $(function() {
+            const raw = `@Html.Raw(Model.ChatResponse.Result)`;
+            const pretty = JSON.stringify(JSON.parse(raw), null, 2);
+
+            document.getElementById("output").textContent = pretty;
+        });
+    </script>
+}

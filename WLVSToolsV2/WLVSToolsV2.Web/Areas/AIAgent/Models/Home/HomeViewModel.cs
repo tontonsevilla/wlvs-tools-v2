@@ -9,8 +9,8 @@ namespace WLVSToolsV2.Web.Areas.AIAgent.Models.Home
         {
             MenuItems = new List<MenuItem>()
             {
-                new MenuItem("Generate Personal Info", "~/AIAssistant/Generate/PersonalInfo"),
-                new MenuItem("Generate Personal Info and Register", "~/AIAssistant/Generate/PersonalInfoAndRegister")
+                new MenuItem("Generate Personal Info", "~/AIAgent/Generate/PersonalInfo"),
+                new MenuItem("Generate Personal Info and Register", "~/AIAgent/Generate/PersonalInfoAndRegister")
             };
 
             MenuItems = MenuItems.OrderBy(item => item.Title).ToList();
